@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://raw.githack.com/programming2007/illustration/main/illustration.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+        <link rel = "icon" href = 
+        "https://icon-library.com/images/cold-icon/cold-icon-12.jpg" 
+                type = "image/x-icon">
+    <style>
+        body,
+        html {
+            min-height: 50%;
+        }
+
+        body {
+
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+            background-image: url('temp.jpg');
+            opacity: 0.9;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            box-sizing: border-box;
+
+
+        }
+
+        .input {
+            border: 2px solid var(--lightgreen);
+            position: unset;
+            background-size: cover;
+            text-align: center;
+            font-weight: bold;
+            padding: 5px 10px;
+
+            height: 60px
+        }
+
+        .container-fluid {
+            width: 100%;
+            height: 100vh;
+           
+            justify-content: center;
+            
+            text-align: center;
+            padding-top: 3;
+
+            background-size: cover;
+            
+            flex-direction: inherit;
+            display: -moz-box;
+            justify-content: center;
+            mask-position: 0vh;
+
+
+            background-image: linear-gradient(to right top,
+                    #6ed16b, #00c69a,
+                    #00b4c3, #009ed7, #0083cf,
+                    #6b7acd, #9d6ebf, #c062a6, #f27292, #ff937b, #ffbe6c, #ffeb76);
+
+
+        }
+
+        .lightblue-clr {
+            color: #000000;
+        }
+
+        h1 {
+            text-align: center;
+            padding-bottom: 30px;
+            text-decoration: underline;
+            --border-radius: 1px;
+            --border-width: 1px;
+            appearance: none;
+            position: relative;
+            padding: 1em 2em;
+            border: 20;
+            display: inline-flexbox;
+            font-size: 37px;
+            font-weight: 300;
+            color: #2c0223;
+            z-index: 2;
+            position: static;
+
+        }
+
+        @media screen and (max-width: 650px) {
+            .input {
+                width: 100%;
+            }
+        }
+
+        .e {
+            color: rgb(87, 2, 75);
+        }
+    </style>
+</head>
+
+<div class="container-fluid">
+    <center>
+        <h1>Temperature Converter</h1><br><br><br><br>
+
+
+        <div class="c">
+            <input type="number" id="celsius" value="0" class="input" onchange="celsiusto(this.value)"
+                oninput="celsiusto(this.value)">
+            <div class="lightblue-clr">Celsius</div>
+
+        </div>
+        <div class="e">&equals;</div>
+        <div class="f">
+            <input type="number" id="fahrenhait" value="32" class="input" onchange="fahrenhaito(this.value)"
+                oninput="fahrenhaito(this.value)">
+            <div class="lightblue-clr">Fahrenheit</div>
+        </div>
+        <div class="e">&equals;</div>
+        <div class="k">
+            <input type="number" id="kelvin" value="273.15" class="input" onchange="kelvinto(this.value)"
+                oninput="kelvinto(this.value)">
+            <div class="lightblue-clr">Kelvin</div>
+        </div>
+</div>
+</center>
+<script>
+    let f = document.getElementById("fahrenhait")
+    let k = document.getElementById("kelvin")
+    let c = document.getElementById("celsius")
+    function celsiusto(e) {
+        e = parseFloat(e)
+        f.value = (e * 9 / 5) + 32
+        k.value = e + 273.15
+    }
+
+    function fahrenhaito(e) {
+        e = parseFloat(e)
+        c.value = (e - 32) * 5 / 9
+        k.value = (e - 32) * 5 / 9 + 273.15
+    }
+
+    function kelvinto(e) {
+        e = parseFloat(e)
+        c.value = e - 273.15
+        f.value = (e - 273.15) * 9 / 5 + 32
+    }
+
+</script>
+<!-- This code is Written by Twinkal Meshram -->
+</body>
+
+</html>
